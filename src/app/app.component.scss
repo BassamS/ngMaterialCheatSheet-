@@ -13,3 +13,13 @@ div {
 span {
   padding-right: 1rem;
 }
+
+mat-sidenav,
+mat-sidenav-content {
+  padding: 16px;
+}
+
+mat-sidenav {
+  background: lightcoral;
+  width: 200px;
+}

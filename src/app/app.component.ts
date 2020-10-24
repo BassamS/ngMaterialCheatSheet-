@@ -10,6 +10,14 @@ export class AppComponent {
   notifications = 0;
   showSpinner = false;
 
+  // vav
+  opened = false;
+
+  log(state) {
+    console.log(state);
+
+  }
+
   loadData() {
     this.showSpinner = true;
     setTimeout(() => {
