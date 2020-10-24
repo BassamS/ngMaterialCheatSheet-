@@ -1,0 +1,137 @@
+<!-- <router-outlet></router-outlet> -->
+
+
+<!-- Toolbar -->
+<mat-toolbar color="accent" class="navbar">
+  <div>Code</div>
+  <div>
+    <span>Home</span>
+    <span>About</span>
+    <span>Service</span>
+  </div>
+</mat-toolbar>
+
+<!-- Text Sizes -->
+
+<div class="mat-display-4">This is display 4(mat-display-4)</div>
+<div class="mat-display-3">This is display 3(mat-display-3)</div>
+<div class="mat-display-2">This is display 2(mat-display-2)</div>
+<div class="mat-display-1">This is display 1(mat-display-1)</div>
+
+<div class="mat-headline">This is a heading for h1 (mat-headline)</div>
+<div class="mat-title">This is a heading for h2(mat-title)</div>
+<div class="mat-subheading-2">This is a heading for h3(mat-subheading-2)</div>
+<div class="mat-subheading-1">This is a heading for h4(mat-subheading-1)</div>
+
+<div class="mat-body-1">This is body text(mat-body-1)</div>
+<div class="mat-body-2">This is bold body text(mat-body-2)</div>
+<div class="mat-caption">This is caption text(mat-caption)</div>
+
+
+<div class="mat-typography">
+  <p>(mat-typography)</p>
+  <h1>This is a heading for (h1)</h1>
+  <h2>This is a heading for (h2)</h2>
+  <h3>This is a heading for (h3)</h3>
+  <h4>This is a heading for (h4)</h4>
+</div>
+
+
+<!-- Buttons -->
+
+<div>
+  <button mat-button>mat-button</button>
+  <button mat-raised-button>mat-raised-button</button>
+  <button mat-flat-button>mat-flat-button</button>
+  <button mat-stroked-button>mat-stroked-button</button>
+</div>
+
+
+<div>
+  <button mat-icon-button>mat-icon-button</button>
+  <button mat-fab>mat-fab</button>
+  <button mat-mini-fab>mat-mini-fab</button>
+</div>
+
+
+<div>
+  <button color="primary" mat-button>primary</button>
+  <button color="accent" mat-button>accent</button>
+  <button color="warn" mat-button disableRipple>warn (disableRipple)</button>
+  <button mat-raised-button color="primary">Primary</button>
+  <button mat-raised-button color="accent">Accent</button>
+  <button color="warn" mat-raised-button>warn</button>
+</div>
+
+<div>
+  <mat-button-toggle #toggleBtn checked disableRipple>(mat-button-toggle)</mat-button-toggle>
+  {{ toggleBtn.checked }}
+</div>
+
+
+<div>
+  <mat-button-toggle-group #toggleGroup="matButtonToggleGroup" multiple>
+    <mat-button-toggle value="angular">Angular</mat-button-toggle>
+    <mat-button-toggle value="react">React</mat-button-toggle>
+    <mat-button-toggle value="vue">Vue</mat-button-toggle>
+  </mat-button-toggle-group>
+  {{ toggleGroup.value}}
+</div>
+
+<!-- Icons! -->
+
+<div>
+  <mat-icon color="primary">euro_symbol</mat-icon>
+</div>
+
+<!-- Badges -->
+
+
+<div>
+  <span matBadge="5" matBadgePosition="below before">Notifications</span>
+</div>
+
+<div>
+  <span [matBadge]="notifications" [matBadgeHidden]="notifications === 0">inbox</span>
+</div>
+
+<div>
+  <span matBadge="5" matBadgePosition="below after">Notifications</span>
+</div>
+
+<div>
+  <span matBadge="5" matBadgePosition="above before">Notifications</span>
+</div>
+
+<div>
+  <span matBadge="5" matBadgeSize="small">Notifications</span>
+</div>
+
+<div>
+  <span matBadge="5" matBadgeSize="medium">Notifications</span>
+</div>
+
+<div>
+  <span matBadge="5" matBadgeSize="large">Notifications</span>
+</div>
+
+<div>
+  <span matBadge="5" matBadgeColor="primary">Notifications</span>
+</div>
+
+<div>
+  <span matBadge="5" matBadgeColor="accent">Notifications</span>
+</div>
+
+<div>
+  <span matBadge="5" matBadgeColor="warn" matBadgeOverlap="false">matBadgeOverlap = false</span>
+</div>
+
+
+<!-- Spinner -->
+
+<mat-progress-spinner value="90"></mat-progress-spinner>
+
+<mat-spinner *ngIf="showSpinner"></mat-spinner>
+<button (click)="loadData()">Load Data</button>
+
