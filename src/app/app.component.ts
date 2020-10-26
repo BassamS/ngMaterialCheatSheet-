@@ -24,4 +24,12 @@ export class AppComponent {
       this.showSpinner = false;
     }, 3000)
   }
+
+  // Tabs
+  // logChange(index) {
+  //   console.log(index);
+  // }
+
+  // Select
+  selectedValue: string;
 }

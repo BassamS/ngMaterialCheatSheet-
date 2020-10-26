@@ -23,3 +23,14 @@ mat-sidenav {
   background: lightcoral;
   width: 200px;
 }
+
+mat-list-item,
+a,
+mat-tab-group,
+mat-form-field {
+  background: black;
+}
+
+mat-grid-tile {
+  background: lightblue;
+}
