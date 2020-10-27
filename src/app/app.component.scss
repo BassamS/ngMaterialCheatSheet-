@@ -39,3 +39,16 @@ mat-grid-tile {
 table {
   width: 100%;
 }
+
+.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid skyblue;
+  box-sizing: border-box;
+  height: 100px;
+}
+
+.container {
+  height: 400px;
+}

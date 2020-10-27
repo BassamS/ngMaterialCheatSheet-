@@ -1,10 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogExampleComponent } from './dialog-example/dialog-example.component';
+import { MatTableDataSource } from '@angular/material/table';
+// import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
 
 // Table
 export interface PeriodicElement {
@@ -42,7 +45,14 @@ export class AppComponent implements OnInit {
 
   // Table
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
+
+  // @ViewChild(MatSort, { static: true }) sort: MatSort;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 
   log(state) {
     console.log(state);
@@ -81,6 +91,10 @@ export class AppComponent implements OnInit {
       startWith(''),
       map((value) => this._filter(value))
     );
+
+    // // Data table sorting
+    // this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
 
   private _filter(value: string): string[] {
@@ -126,18 +140,27 @@ export class AppComponent implements OnInit {
   // }
 
   // Dialog
-  constructor(public dialog: MatDialog) {}
+  // constructor(public dialog: MatDialog) {}
 
-  openDialog() {
-    // let dialogRef = this.dialog.open(DialogExampleComponent);
-    let dialogRef = this.dialog.open(DialogExampleComponent, {
-      data: { name: 'Sam' },
-    });
+  // Virtual Scrolling
+  numbers = [];
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+  constructor() {
+    for (let i = 0; i < 1000; i++) {
+      this.numbers.push(i);
+    }
   }
+
+  // openDialog() {
+  //   // let dialogRef = this.dialog.open(DialogExampleComponent);
+  //   let dialogRef = this.dialog.open(DialogExampleComponent, {
+  //     data: { name: 'Sam' },
+  //   });
+
+  //   dialogRef.afterClosed().subscribe((result) => {
+  //     console.log(`Dialog result: ${result}`);
+  //   });
+  // }
   // openDialog() {
   //   this.dialog.open(DialogExampleComponent);
   // }
